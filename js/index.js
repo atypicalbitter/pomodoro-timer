@@ -4,8 +4,22 @@ const pauseEl = document.getElementById('pause');
 const resetEl = document.getElementById('reset'); 
 const timerEl = document.getElementById('timer'); 
 
+let interval; 
+let timeLeft = 1500; 
+
+function updateTimer() {
+    let minutes = Math.floor(timeLeft / 60); 
+    let seconds = timeLeft % 60;
+    let formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`; 
+    timerEl.innerHTML = formattedTime; 
+}
+
+
 function startTimer() {
-    console.log('start')
+interval = setInterval(() => {
+    timeLeft--;
+    updateTimer();
+}, 1000)
 }
 function stopTimer() {
     console.log('stop')
