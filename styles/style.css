@@ -7,7 +7,7 @@ background-size:auto;
 background-repeat: no-repeat;
 }
 
-.container {
+.container, #quote-container {
     margin: 0 auto;
     max-width: 800px;
     text-align: center;
